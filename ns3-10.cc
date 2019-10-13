@@ -18,15 +18,15 @@ int main(int argc,char *argv[])
   uint32_t nCsma = 3;
 
   CommandLine cmd;
-  cmd.AddValue (``nCsma'', ``Number of \"extra\" CSMA nodes/devices'', nCsma);
-  cmd.AddValue (``verbose'', ``Tell echo applications to log if true'', verbose);
+  cmd.AddValue ("nCsma", "Number of \"extra\" CSMA nodes/devices", nCsma);
+  cmd.AddValue ("verbose", "Tell echo applications to log if true", verbose);
 
   cmd.Parse (argc,argv);
 
   if (verbose)
     {
-      LogComponentEnable(``UdpEchoClientApplication'', LOG_LEVEL_INFO);
-      LogComponentEnable(``UdpEchoServerApplication'', LOG_LEVEL_INFO);
+      LogComponentEnable("UdpEchoClientApplication", LOG_LEVEL_INFO);
+      LogComponentEnable("UdpEchoServerApplication", LOG_LEVEL_INFO);
     }
 
   nCsma = nCsma == 0 ? 1 : nCsma;
